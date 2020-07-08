@@ -33,6 +33,7 @@ let connectCall = async (request, response) => {
 		SourcePhoneNumber: "+420800021031"
 	  };
 	
+	console.log(request);
 	console.log("in here: Connect Call");
 
 	let data = await connect.startOutboundVoiceContact(params).promise();

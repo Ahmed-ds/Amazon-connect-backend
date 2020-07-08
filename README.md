@@ -13,14 +13,14 @@ serverless deploy -v
 ## Usage
 
 Use the following commands to execute the respective endpoints:
-#### 1. getPhoneNumbersList:
+#### 1. getPhoneNumbersList
 ```curl
 curl https://d37i22w4b8.execute-api.eu-west-2.amazonaws.com/dev/getPhoneNumbersList
 ```
 
 #### 2. connectCall
 ```curl
-curl https://d37i22w4b8.execute-api.eu-west-2.amazonaws.com/dev/connectCall
+curl -H "Content-Type: application/json" -X POST -d '{-- JSON parameters --}' https://d37i22w4b8.execute-api.eu-west-2.amazonaws.com/dev/connectCall
 ```
 
 ## Contributing

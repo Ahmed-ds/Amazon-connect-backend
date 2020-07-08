@@ -59,7 +59,7 @@ functions:
     events:
       - http:
           path: connectCall
-          method: get
+          method: post
           cors: true
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
