@@ -5,6 +5,6 @@ module.exports.getPhoneNumbersList = async (event) => {
 };
 
 module.exports.connectCall = async (event) => {
-	let requestBody = JSON.parse(event.body);
-	return await method.connectCall(requestBody);
+
+	return await method.connectCall(JSON.parse(event.body));
 }
