@@ -1,5 +1,6 @@
 let AWS = require("aws-sdk"),
 	connect = new AWS.Connect(),
+	message = require("./response"),
 	configurations = require("../configurations/config.json");
 
 async function getPhoneNumbersList() {
@@ -11,8 +12,8 @@ async function getPhoneNumbersList() {
 			PhoneNumberTypes: configurations.phoneNumberTypes
 		})
 		.promise()
-		.then(data => prepareResponse(data))
-		.catch(error => prepareErrorResponse(error));
+		.then(data => message.prepareResponse(data))
+		.catch(error => message.prepareErrorResponse(error));
 }
 
 async function connectCall(request) {
@@ -24,26 +25,8 @@ async function connectCall(request) {
 			SourcePhoneNumber: request.source
 		})
 		.promise()
-		.then(data => prepareResponse(data))
-		.catch(error => prepareErrorResponse(error));
-}
-
-function prepareResponse(data) {
-	return {
-		statusCode: 200,
-		body: JSON.stringify({
-			data: data
-		})
-	};
-}
-
-function prepareErrorResponse(error) {
-	return {
-		statusCode: 500,
-		body: JSON.stringify({
-			error
-		})
-	};
+		.then(data => message.prepareResponse(data))
+		.catch(error => message.prepareErrorResponse(error));
 }
 
 module.exports = {
