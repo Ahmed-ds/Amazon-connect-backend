@@ -4,7 +4,7 @@
   "description": "A middleware platform developed to provide connectivity with the AWS Connect calling services.",
   "main": "handler.js",
   "dependencies": {
-    "aws-sdk": "^2.713.0"
+    "aws-sdk": "^2.814.0"
   },
   "devDependencies": {},
   "scripts": {
